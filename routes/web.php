@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('client-frontend.index');
+});
+
+Route::get('/registracija', function () {
+    return view('client-frontend.form-sign-up');
 });

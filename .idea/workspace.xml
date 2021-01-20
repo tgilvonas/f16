@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c096ef73-cff7-4ab2-b15c-fe1241bf0bc2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/client-frontend/form-sign-up.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/client-frontend/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/client-frontend.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/custom-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +152,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../buhalteres-crm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../erika-menus" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -156,6 +163,9 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\f16\resources\views\client-frontend" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\laragon\www\f16\public" />
     </key>
@@ -178,6 +188,7 @@
       <updated>1610995008730</updated>
       <workItem from="1610995009866" duration="5180000" />
       <workItem from="1611045882877" duration="13000" />
+      <workItem from="1611166597868" duration="4269000" />
     </task>
     <servers />
   </component>
@@ -185,14 +196,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1611045894147">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1611168466826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1611045894147" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1610999081653">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1611168466826" />
+    <state x="974" y="475" key="NewPhpFileDialog" timestamp="1611168699476">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610999081653" />
+    <state x="974" y="475" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1611168699476" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1611045883370">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
