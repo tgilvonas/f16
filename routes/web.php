@@ -15,8 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('client-frontend.index');
-});
+})->name('index');
 
 Route::get('/registracija', function () {
     return view('client-frontend.form-sign-up');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::group(['prefix' => 'savitarna', 'middleware' => ['auth']], function() {
+    Route::get('/uzsakymai', [\App\Http\Controllers\OrdersController::class, 'index'])->name('orders.index');
+    Route::get('/uzsakymai/{id}', [\App\Http\Controllers\OrdersController::class, 'view'])->name('orders.view');
+});
+
+require __DIR__.'/auth.php';

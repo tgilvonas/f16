@@ -10,16 +10,19 @@
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">Prisijungti</h4>
             </div>
-            <div class="card-body">
+            <form class="card-body" method="POST" action="{{ route('login') }}">
+                @csrf
+
+                @include('partials.error-messages')
                 <div class="form-group">
-                    <input type="email" id="inputEmail" class="form-control" placeholder="El. paštas" required autofocus>
+                    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="El. paštas" required autofocus>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Slaptažodis" required>
+                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Slaptažodis" required>
                 </div>
                 <div class="form-group checkbox mb-3">
                     <label>
-                        <input type="checkbox" value="remember-me"> Prisiminti mane
+                        <input type="checkbox" name="remember_me" value="remember-me"> Prisiminti mane
                     </label>
                 </div>
                 <div class="form-group">
@@ -28,7 +31,7 @@
                 <div class="form-group">
                     Neturite paskyros? <a href="/registracija">Registruokitės</a>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 @endsection

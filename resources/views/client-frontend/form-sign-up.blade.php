@@ -10,26 +10,30 @@
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">Registruotis</h4>
             </div>
-            <div class="card-body">
+            <form class="card-body" method="POST" action="{{ route('register') }}">
+                @csrf
+
+                @include('partials.error-messages')
+
                 <div class="form-group">
                     <label class="font-weight-bold">Vardas, pavardė</label>
-                    <input type="text" id="name_surname" class="form-control" placeholder="Vardas, pavardė" required autofocus>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Vardas, pavardė" required autofocus>
                 </div>
                 <div class="form-group">
                     <label class="font-weight-bold">El. paštas</label>
-                    <input type="email" id="email" class="form-control" placeholder="El. paštas" required autofocus>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="El. paštas" required autofocus>
                 </div>
                 <div class="form-group">
                     <label class="font-weight-bold">Telefonas</label>
-                    <input type="text" id="telephone" class="form-control" placeholder="Telefonas" required autofocus>
+                    <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Telefonas" required autofocus>
                 </div>
                 <div class="form-group">
                     <label class="font-weight-bold">Slaptažodis</label>
-                    <input type="password" id="password" class="form-control" placeholder="Slaptažodis" required>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Slaptažodis" required>
                 </div>
                 <div class="form-group">
                     <label class="font-weight-bold">Pakartokite slaptažodį</label>
-                    <input type="password" id="confirm_password" class="form-control" placeholder="Pakartokite slaptažodį" required>
+                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Pakartokite slaptažodį" required>
                 </div>
                 <div class="form-group checkbox mb-3">
                     <label>
@@ -39,7 +43,7 @@
                 <div class="form-group text-center">
                     <button class="btn btn-lg btn-primary" type="submit">Registruotis</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 @endsection
