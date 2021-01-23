@@ -13,7 +13,7 @@
             <form class="card-body" method="POST" action="{{ route('login') }}">
                 @csrf
 
-                @include('partials.error-messages')
+                @include('partials.messages')
                 <div class="form-group">
                     <input type="email" name="email" id="inputEmail" class="form-control" placeholder="El. paštas" required autofocus>
                 </div>

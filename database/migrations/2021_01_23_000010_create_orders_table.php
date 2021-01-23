@@ -28,9 +28,9 @@ class CreateOrdersTable extends Migration
             $table->string('user_name')->nullable();
             $table->string('user_email')->nullable();
             $table->json('districts')->nullable();
-            $table->string('format_title', 30)->nullable();
-            $table->string('format_measurements', 30)->nullable();
-            $table->double('format_coefficient')->nullable();
+            $table->string('print_format_title', 30)->nullable();
+            $table->string('print_format_measurements', 30)->nullable();
+            $table->double('print_format_coefficient')->nullable();
             $table->string('print_type_title')->nullable();
             $table->double('print_type_coefficient')->nullable();
             $table->integer('amount')->nullable();

@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c096ef73-cff7-4ab2-b15c-fe1241bf0bc2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_000004_create_payment_methods_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/orders/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisteredUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisteredUserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_21_000001_create_amounts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_000001_create_amounts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_21_000004_create_districts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_000005_create_districts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_21_000005_create_print_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_000006_create_print_types_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_21_000006_create_order_statuses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_000007_create_order_statuses_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_21_000007_create_formats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_000008_create_formats_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_21_000009_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_000010_create_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_23_000001_create_amounts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_000007_create_order_amounts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_23_000008_create_formats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_000000_create_print_formats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_23_000010_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_000010_create_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client-frontend/form-sign-up.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client-frontend/form-sign-up.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client-frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client-frontend/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/orders/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/orders/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/error-messages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/messages.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +157,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -167,12 +168,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\f16\resources\views\client-frontend" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\laragon\www\f16\database\migrations" />
       <recent name="C:\laragon\www\f16\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\f16\resources\views\client-frontend" />
     </key>
   </component>
   <component name="RunManager">
@@ -196,7 +197,7 @@
       <workItem from="1611166597868" duration="5900000" />
       <workItem from="1611249924216" duration="1989000" />
       <workItem from="1611410797009" duration="9498000" />
-      <workItem from="1611433805524" duration="614000" />
+      <workItem from="1611433805524" duration="3970000" />
     </task>
     <servers />
   </component>
@@ -208,10 +209,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1611431985588" />
-    <state x="974" y="475" key="NewPhpFileDialog" timestamp="1611417057809">
+    <state x="974" y="475" key="NewPhpFileDialog" timestamp="1611436905575">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="974" y="475" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1611417057809" />
+    <state x="974" y="475" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1611436905575" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1611045883370">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAmountsTable extends Migration
+class CreatePrintFormatsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'amounts';
+    public $tableName = 'print_formats';
 
     /**
      * Run the migrations.
-     * @table amounts
+     * @table print_formats
      *
      * @return void
      */
@@ -23,7 +23,8 @@ class CreateAmountsTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('amount')->nullable();
+            $table->string('title', 30)->nullable();
+            $table->string('measurements', 30)->nullable();
             $table->double('coefficient')->nullable();
             $table->softDeletes();
             $table->nullableTimestamps();

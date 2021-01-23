@@ -13,7 +13,7 @@
             <form class="card-body" method="POST" action="{{ route('register') }}">
                 @csrf
 
-                @include('partials.error-messages')
+                @include('partials.messages')
 
                 <div class="form-group">
                     <label class="font-weight-bold">Vardas, pavardė</label>

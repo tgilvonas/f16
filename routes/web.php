@@ -27,6 +27,8 @@ Route::get('/dashboard', function () {
 
 Route::group(['prefix' => 'savitarna', 'middleware' => ['auth']], function() {
     Route::get('/uzsakymai', [\App\Http\Controllers\OrdersController::class, 'index'])->name('orders.index');
+    Route::get('/uzsakymai/naujas', [\App\Http\Controllers\OrdersController::class, 'create'])->name('orders.create');
+    Route::post('/uzsakymai/naujas', [\App\Http\Controllers\OrdersController::class, 'store'])->name('orders.store');
     Route::get('/uzsakymai/{id}', [\App\Http\Controllers\OrdersController::class, 'view'])->name('orders.view');
 });
 
