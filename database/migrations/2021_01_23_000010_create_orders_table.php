@@ -23,8 +23,8 @@ class CreateOrdersTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->bigInteger('user_id')->nullable();
-            $table->integer('order_status_id')->nullable();
+            $table->string('order_status')->nullable();
+            $table->bigInteger('user_id')->index()->nullable();
             $table->string('user_name')->nullable();
             $table->string('user_email')->nullable();
             $table->json('districts')->nullable();
@@ -36,6 +36,7 @@ class CreateOrdersTable extends Migration
             $table->integer('amount')->nullable();
             $table->double('amount_coefficient')->nullable();
             $table->double('total')->nullable();
+            $table->string('payment_method_title')->nullable();
             $table->tinyInteger('layout_needed')->nullable();
             $table->tinyInteger('invoice_needed')->nullable();
             $table->text('flyer_text')->nullable();

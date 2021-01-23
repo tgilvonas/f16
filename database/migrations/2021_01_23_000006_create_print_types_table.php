@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDistrictsTable extends Migration
+class CreatePrintTypesTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'districts';
+    public $tableName = 'print_types';
 
     /**
      * Run the migrations.
-     * @table districts
+     * @table print_types
      *
      * @return void
      */
@@ -23,8 +23,8 @@ class CreateDistrictsTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('name')->nullable();
-            $table->integer('population')->nullable();
+            $table->string('title', 255)->nullable();
+            $table->text('description')->nullable();
             $table->double('coefficient')->nullable();
             $table->softDeletes();
             $table->nullableTimestamps();
