@@ -4,8 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>F16</title>
+
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+
+    <link rel="stylesheet" href="/select2/css/select2.min.css">
+    <script type="text/javascript" src="/select2/js/select2.full.min.js"></script>
+
     <link rel="stylesheet" href="/css/custom-styles.css">
+    <script type="text/javascript" src="/js/client-frontend.js"></script>
 </head>
 <body class="text-dark">
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom">

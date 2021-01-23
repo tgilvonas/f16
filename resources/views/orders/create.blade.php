@@ -7,13 +7,13 @@
         @csrf
         <div class="form-group">
             <label class="font-weight-bold">Šalis</label>
-            <select name="country" class="form-control" disabled>
+            <select name="country" class="form-control select2" disabled>
                 <option value="Lietuva">Lietuva</option>
             </select>
         </div>
         <div class="form-group">
             <label class="font-weight-bold">Savivaldybė</label>
-            <select name="city" class="form-control" disabled>
+            <select name="city" class="form-control select2" disabled>
                 <option value="Vilnius">Vilnius</option>
             </select>
         </div>
