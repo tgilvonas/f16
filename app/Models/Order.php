@@ -13,4 +13,8 @@ class Order extends Model
     protected $table = 'orders';
 
     protected $guarded = ['id'];
+
+    protected $casts = [
+        'districts' => 'object',
+    ];
 }

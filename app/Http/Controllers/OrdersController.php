@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OrderRequest;
 use App\Models\District;
 use App\Models\OrderAmount;
 use App\Models\PrintFormat;
@@ -25,7 +26,7 @@ class OrdersController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(OrderRequest $request)
     {
         dd('Here should be the logic which saves order and redirects to index');
     }
