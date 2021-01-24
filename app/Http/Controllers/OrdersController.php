@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\District;
+use App\Models\OrderAmount;
+use App\Models\PrintFormat;
+use App\Models\PrintType;
 use Illuminate\Http\Request;
 
 class OrdersController extends Controller
@@ -13,7 +17,12 @@ class OrdersController extends Controller
 
     public function create()
     {
-        return view('orders.create');
+        return view('orders.create', [
+            'districts' => District::orderBy('name', 'asc')->get(),
+            'amounts' => OrderAmount::orderBy('amount', 'asc')->get(),
+            'printFormats' => PrintFormat::all(),
+            'printTypes' => PrintType::all(),
+        ]);
     }
 
     public function store()
