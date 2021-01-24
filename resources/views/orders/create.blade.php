@@ -70,6 +70,14 @@
             @endforeach
         </div>
         <div class="form-group">
+            <label class="font-weight-bold">Skrajutės tekstas</label>
+            <textarea name="flyer_text" class="form-control">{{ old('flyer_text') }}</textarea>
+        </div>
+        <div class="form-group">
+            <label class="font-weight-bold">Išplatinimo data</label>
+            <input type="date" name="distribution_date" value="{{ old('distribution_date') }}" class="form-control" />
+        </div>
+        <div class="form-group">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="invoice_needed" id="invoice_needed" value="1" @if(old('invoice_needed', 0) == 1) checked @endif >
                 <label class="form-check-label" for="invoice_needed">
@@ -89,6 +97,8 @@
         <div class="form-group">
             <span class="font-weight-bold">Suma: <span class="total_sum">0.00</span>&euro;</span>
         </div>
-        <button type="submit" class="btn btn-success">Sukurti užsakymą</button>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Sukurti užsakymą</button>
+        </div>
     </form>
 @endsection
