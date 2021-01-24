@@ -7,14 +7,15 @@ $(document).ready(function(){
     let amountCoefficient = 1;
     let amount = 1;
 
+    findLargestDistrictCoefficient();
     findAmountAndItsCoefficient();
     findPrintFormatCoefficient();
     findPrintTypeCoefficient();
     calculateTotalSumAndOutputItToHtmlElement();
 
     $('.districts').change(function(){
-        console.log('Districts were changed');
-        console.log($(this).val());
+        findLargestDistrictCoefficient();
+        calculateTotalSumAndOutputItToHtmlElement();
     });
     $('.amount').change(function(){
         findAmountAndItsCoefficient();
@@ -29,6 +30,25 @@ $(document).ready(function(){
         calculateTotalSumAndOutputItToHtmlElement();
     });
 
+    function findLargestDistrictCoefficient() {
+        let idsOfDistricts = $('.districts').val();
+        for (let i = 0; i < idsOfDistricts.length; i++) {
+            idsOfDistricts[i] = Number(idsOfDistricts[i]);
+        }
+        let coefficients = new Array();
+        for (let i = 0; i < dataOfCoefficients['districts'].length; i++) {
+            if (idsOfDistricts.includes(dataOfCoefficients['districts'][i]['id'])) {
+                coefficients.push(dataOfCoefficients['districts'][i]['coefficient']);
+            }
+        }
+        if (coefficients.length > 0) {
+            districtCoefficient = coefficients.reduce(function(a, b) {
+                return Math.max(a, b);
+            });
+        } else {
+            districtCoefficient = 1;
+        }
+    }
     function findAmountAndItsCoefficient() {
         let coefficient = 1;
         let id = $('.amount').val();
