@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c096ef73-cff7-4ab2-b15c-fe1241bf0bc2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/img/payments/stripe-logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/OrderStatus.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PaymentMethod.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_23_000004_create_payment_methods_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_23_000007_create_order_statuses_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/orders/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/orders/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +149,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../erika-menus" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -164,13 +160,15 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\f16\public\img\payments" />
+      <recent name="C:\laragon\www\f16\resources\views\client-frontend" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\f16\public\img" />
       <recent name="C:\laragon\www\f16\public" />
       <recent name="C:\laragon\www\f16\public\js" />
       <recent name="C:\laragon\www\f16\database\migrations" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\f16\resources\views\client-frontend" />
     </key>
   </component>
   <component name="RunManager">
@@ -195,7 +193,7 @@
       <workItem from="1611249924216" duration="1989000" />
       <workItem from="1611410797009" duration="9498000" />
       <workItem from="1611433805524" duration="6370000" />
-      <workItem from="1611497356126" duration="5137000" />
+      <workItem from="1611497356126" duration="6222000" />
     </task>
     <servers />
   </component>

@@ -70,6 +70,15 @@
             @endforeach
         </div>
         <div class="form-group">
+            <div class="font-weight-bold">Apmokėjimas</div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment" value="stripe" id="payment_stripe" checked style="margin-top: 15px;">
+                <label class="form-check-label" for="payment_stripe">
+                    <img src="/img/payments/stripe-logo.png" alt="Stripe" style="max-height: 50px;" />
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
             <span class="font-weight-bold">Suma: <span class="total_sum">0.00</span>&euro;</span>
         </div>
         <button type="submit" class="btn btn-success">Sukurti užsakymą</button>
