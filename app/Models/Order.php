@@ -19,4 +19,14 @@ class Order extends Model implements HasMedia
     protected $casts = [
         'districts' => 'object',
     ];
+
+    public function registerMediaCollections(): void
+    {
+        // if design needed:
+        $this->addMediaCollection('flyer_logo')->singleFile();
+        $this->addMediaCollection('additional_files');
+
+        // if design not needed:
+        $this->addMediaCollection('flyer_layout_file')->singleFile();
+    }
 }

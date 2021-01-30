@@ -50,7 +50,7 @@ class OrdersController extends Controller
 
         $total = $amount * $amountCoefficient * $districtCoefficient * $printFormatCoefficient * $printTypeCoefficient;
 
-        Order::create([
+        $order = Order::create([
             'order_status' => 'Naujas',
             'user_id' => auth()->user()->id,
             'user_name' => auth()->user()->name,
@@ -70,6 +70,17 @@ class OrdersController extends Controller
             'flyer_text' => $request->get('flyer_text', ''),
             'distribution_date' => date('Y-m-d'), // TO BE CHANGED AND CONCLUDED!!!
         ]);
+
+        if ($request->get('design_needed', 0) == 1) {
+            if ($request->hasFile('flyer_logo')) {
+                $order->addMediaFromRequest('flyer_logo')->toMediaCollection('flyer_logo');
+            }
+            $order->addMultipleMediaFromRequest(['additional_files'])->each(function ($fileAdder) {
+                $fileAdder->toMediaCollection('additional_files');
+            });;
+        } elseif ($request->get('design_needed', 0) == 0 && $request->hasFile('flyer_layout_file')) {
+            $order->addMediaFromRequest('flyer_layout_file')->toMediaCollection('flyer_layout_file');
+        }
 
         return redirect()->route('orders.index')->with('message', 'Jūsų užsakymas sukurtas');
     }
