@@ -75,9 +75,11 @@ class OrdersController extends Controller
             if ($request->hasFile('flyer_logo')) {
                 $order->addMediaFromRequest('flyer_logo')->toMediaCollection('flyer_logo');
             }
-            $order->addMultipleMediaFromRequest(['additional_files'])->each(function ($fileAdder) {
-                $fileAdder->toMediaCollection('additional_files');
-            });;
+            if ($request->has('additional_files')) {
+                $order->addMultipleMediaFromRequest(['additional_files'])->each(function ($fileAdder) {
+                    $fileAdder->toMediaCollection('additional_files');
+                });
+            }
         } elseif ($request->get('design_needed', 0) == 0 && $request->hasFile('flyer_layout_file')) {
             $order->addMediaFromRequest('flyer_layout_file')->toMediaCollection('flyer_layout_file');
         }
