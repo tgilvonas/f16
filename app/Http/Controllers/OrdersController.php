@@ -84,4 +84,16 @@ class OrdersController extends Controller
 
         return redirect()->route('orders.index')->with('message', 'Jūsų užsakymas sukurtas');
     }
+
+    public function view($id)
+    {
+        $order = Order::findOrFail($id);
+
+        return view('orders.view', [
+            'order' => $order,
+            'flyerLogos' => $order->getMedia('flyer_logo'),
+            'additionalFiles' => $order->getMedia('additional_files'),
+            'flyerLayoutFiles' => $order->getMedia('flyer_layout_file'),
+        ]);
+    }
 }

@@ -18,6 +18,7 @@
                     <th>Sukūrimo data</th>
                     <th>Išplatinimo data</th>
                     <th>Užsakymo būsena</th>
+                    <th>&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,7 +31,14 @@
                         <td>{{ number_format($order->total, 2) }}&euro;</td>
                         <td>{{ $order->created_at }}</td>
                         <td>{{ $order->distribution_date }}</td>
-                        <td>{{ $order->order_status }}</td>
+                        <td>
+                            <span class="badge badge-primary">
+                                {{ $order->order_status }}
+                            </span>
+                        </td>
+                        <th>
+                            <a href="{{ route('orders.view', ['id' => $order->id]) }}" class="btn btn-sm btn-info">Peržiūrėti</a>
+                        </th>
                     </tr>
                 @endforeach
             </tbody>
