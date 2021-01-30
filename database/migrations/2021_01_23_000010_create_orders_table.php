@@ -37,7 +37,7 @@ class CreateOrdersTable extends Migration
             $table->double('amount_coefficient')->nullable();
             $table->double('total')->nullable();
             $table->string('payment_method_title')->nullable();
-            $table->tinyInteger('layout_needed')->nullable();
+            $table->tinyInteger('design_needed')->nullable();
             $table->tinyInteger('invoice_needed')->nullable();
             $table->text('flyer_text')->nullable();
             $table->date('distribution_date')->nullable();

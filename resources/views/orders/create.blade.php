@@ -13,7 +13,7 @@
 
     @include('partials.messages')
     <h1 class="font-weight-bold">Sukurti naują užsakymą</h1>
-    <form method="post" action="{{ route('orders.store') }}">
+    <form method="post" action="{{ route('orders.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label class="font-weight-bold">Šalis</label>
@@ -70,8 +70,32 @@
             @endforeach
         </div>
         <div class="form-group">
-            <label class="font-weight-bold">Skrajutės tekstas</label>
-            <textarea name="flyer_text" class="form-control">{{ old('flyer_text') }}</textarea>
+            <div class="form-check">
+                <input class="form-check-input design_needed" type="checkbox" name="design_needed" id="design_needed" value="1" @if(old('design_needed', 0) == 1) checked @endif >
+                <label class="form-check-label font-weight-bold" for="design_needed">
+                    Reikalingas maketavimas
+                </label>
+            </div>
+        </div>
+        <div class="input-group-design-needed" @if(old('design_needed', 0) == 1) style="display: block;" @else style="display: none;" @endif >
+            <div class="form-group">
+                <label class="font-weight-bold">Įkelkite logotipą</label>
+                <input type="file" name="flyer_logo" />
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold">Įkelkite papildomą medžiagą, kurią norite panaudoti skrajutėje</label>
+                <input type="file" name="additional_files[]" multiple="multiple" />
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold">Skrajutės tekstas</label>
+                <textarea name="flyer_text" class="form-control">{{ old('flyer_text') }}</textarea>
+            </div>
+        </div>
+        <div class="input-group-design-not-needed" @if(old('design_needed', 0) == 0) style="display: block;" @else style="display: none;" @endif >
+            <div class="form-group">
+                <label class="font-weight-bold">Įkelkite skrajutės maketą</label>
+                <input type="file" name="flyer_layout_file" />
+            </div>
         </div>
         <div class="form-group">
             <label class="font-weight-bold">Išplatinimo data</label>
@@ -80,7 +104,7 @@
         <div class="form-group">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="invoice_needed" id="invoice_needed" value="1" @if(old('invoice_needed', 0) == 1) checked @endif >
-                <label class="form-check-label" for="invoice_needed">
+                <label class="form-check-label font-weight-bold" for="invoice_needed">
                     Reikalinga sąskaita-faktūra
                 </label>
             </div>

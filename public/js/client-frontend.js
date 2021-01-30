@@ -30,6 +30,10 @@ $(document).ready(function(){
         calculateTotalSumAndOutputItToHtmlElement();
     });
 
+    $('.design_needed').change(function(){
+        toggleInputsIfDesignNeeded();
+    });
+
     function findLargestDistrictCoefficient() {
         let idsOfDistricts = $('.districts').val();
         for (let i = 0; i < idsOfDistricts.length; i++) {
@@ -92,5 +96,15 @@ $(document).ready(function(){
         let total = amount * amountCoefficient * districtCoefficient * printFormatCoefficient * printTypeCoefficient;
         //console.log(amount, amountCoefficient, districtCoefficient, printFormatCoefficient, printTypeCoefficient)
         $('.total_sum').text(total.toFixed(2));
+    }
+
+    function toggleInputsIfDesignNeeded() {
+        if ($('.design_needed').is(":checked")) {
+            $('.input-group-design-needed').slideDown();
+            $('.input-group-design-not-needed').slideUp();
+        } else {
+            $('.input-group-design-needed').slideUp();
+            $('.input-group-design-not-needed').slideDown();
+        }
     }
 });

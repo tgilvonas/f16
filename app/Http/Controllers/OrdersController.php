@@ -55,7 +55,7 @@ class OrdersController extends Controller
             'user_id' => auth()->user()->id,
             'user_name' => auth()->user()->name,
             'user_email' => auth()->user()->email,
-            'districts' => json_encode($districts),
+            'districts' => $districts,
             'print_format_title' => $printFormat->title ?? '',
             'print_format_measurements' => $printFormat->measurements ?? '',
             'print_format_coefficient' => $printFormatCoefficient,
@@ -65,7 +65,7 @@ class OrdersController extends Controller
             'amount_coefficient' => $amountCoefficient,
             'total' => $total,
             'payment_method_title' => 'Stripe',
-            'layout_needed' => $request->get('layout_needed', 0),
+            'design_needed' => $request->get('design_needed', 0),
             'invoice_needed' => $request->get('invoice_needed', 0),
             'flyer_text' => $request->get('flyer_text', ''),
             'distribution_date' => date('Y-m-d'), // TO BE CHANGED AND CONCLUDED!!!
