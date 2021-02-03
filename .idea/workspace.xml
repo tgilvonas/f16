@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c096ef73-cff7-4ab2-b15c-fe1241bf0bc2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_30_185146_create_media_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/orders/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/orders/view.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +207,7 @@
       <workItem from="1612167037115" duration="15000" />
       <workItem from="1612289476145" duration="645000" />
       <workItem from="1612298069226" duration="6000" />
-      <workItem from="1612377813460" duration="7896000" />
+      <workItem from="1612377813460" duration="8590000" />
     </task>
     <servers />
   </component>

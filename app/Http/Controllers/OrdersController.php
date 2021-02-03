@@ -33,7 +33,7 @@ class OrdersController extends Controller
 
     public function store(OrderRequest $request)
     {
-        if (count($request->districts) > 0) {
+        if (isset($request->districts) && count($request->districts) > 0) {
             $districts = District::whereIn('id', $request->districts)->get();
             $districtCoefficient = max($districts->pluck('coefficient')->toArray());
         } else {
