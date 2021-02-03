@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Order extends Model implements HasMedia
+class Order extends Model
 {
-    use HasFactory, InteractsWithMedia, SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'orders';
 
@@ -20,13 +18,23 @@ class Order extends Model implements HasMedia
         'districts' => 'object',
     ];
 
-    public function registerMediaCollections(): void
+    public function uploads()
     {
-        // if design needed:
-        $this->addMediaCollection('flyer_logo')->singleFile();
-        $this->addMediaCollection('additional_files');
+        return $this->hasMany(Upload::class, 'order_id');
+    }
 
-        // if design not needed:
-        $this->addMediaCollection('flyer_layout_file')->singleFile();
+    public function getFlyerLogos()
+    {
+        return $this->hasMany(Upload::class, 'order_id')->where('type', 'flyer_logo')->get();
+    }
+
+    public function getAdditionalFiles()
+    {
+        return $this->hasMany(Upload::class, 'order_id')->where('type', 'additional_files')->get();
+    }
+
+    public function getFlyerLayoutFiles()
+    {
+        return $this->hasMany(Upload::class, 'order_id')->where('type', 'flyer_layout_file')->get();
     }
 }

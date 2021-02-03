@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c096ef73-cff7-4ab2-b15c-fe1241bf0bc2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_30_185146_create_media_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/orders/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/orders/view.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +160,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lkl" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -202,7 +207,11 @@
       <workItem from="1611497356126" duration="13473000" />
       <workItem from="1611522542572" duration="6257000" />
       <workItem from="1611567565694" duration="640000" />
-      <workItem from="1612018676420" duration="13311000" />
+      <workItem from="1612018676420" duration="13914000" />
+      <workItem from="1612167037115" duration="15000" />
+      <workItem from="1612289476145" duration="645000" />
+      <workItem from="1612298069226" duration="6000" />
+      <workItem from="1612377813460" duration="7896000" />
     </task>
     <servers />
   </component>
@@ -210,18 +219,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1611570248483">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1612382990422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1611570248483" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1612382990422" />
     <state x="974" y="475" key="NewPhpFileDialog" timestamp="1612038176555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="974" y="475" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1612038176555" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1611567593444">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1612298069247">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1611567593444" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1612298069247" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1611418450004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -104,10 +104,12 @@
             <div class="col-xl-12">Logotipas</div>
             <div class="col-xl-12">
                 @if(isset($flyerLogos) && isset($flyerLogos[0]) && is_object($flyerLogos[0]))
-                    @if($flyerLogos[0]->mime_type == 'image/png' || $flyerLogos[0]->mime_type == 'image/jpeg')
-                        <img src="{{ $flyerLogos[0]->getFullUrl() }}" alt="" />
+                    @if(strpos($flyerLogos[0]->file_name_for_user, '.jpg') !== false || strpos($flyerLogos[0]->file_name_for_user, '.jpeg') !== false || strpos($flyerLogos[0]->file_name_for_user, '.png') !== false)
+                        <img src="{{ '/uploads/'.$order->id.'/'.$flyerLogos[0]->system_file_name }}" alt="" />
                     @else
-                        <a href="{{ $flyerLogos[0]->getFullUrl() }}" target="_blank">{{ $flyerLogos[0]->file_name }}</a>
+                        <a href="{{ '/uploads/'.$order->id.'/'.$flyerLogos[0]->system_file_name }}" target="_blank">
+                            {{ $flyerLogos[0]->file_name_for_user }}
+                        </a>
                     @endif
                 @endif
             </div>
@@ -115,7 +117,9 @@
                 <div class="col-xl-12">Papildomi failai</div>
                 @foreach($additionalFiles as $additionalFile)
                     <div class="col-xl-12">
-                        <a href="{{ $additionalFile->getFullUrl() }}" target="_blank">{{ $additionalFile->file_name }}</a>
+                        <a href="{{ '/uploads/'.$order->id.'/'.$additionalFile->system_file_name }}" target="_blank">
+                            {{ $additionalFile->file_name_for_user }}
+                        </a>
                     </div>
                 @endforeach
             @endif
@@ -127,7 +131,9 @@
             <div class="col-xl-12">Maketo failas</div>
             <div class="col-xl-12">
                 @if(isset($flyerLayoutFiles) && isset($flyerLayoutFiles[0]) && is_object($flyerLayoutFiles[0]))
-                    <a href="{{ $flyerLayoutFiles[0]->getFullUrl() }}" target="_blank">{{ $flyerLayoutFiles[0]->file_name }}</a>
+                    <a href="{{ '/uploads/'.$order->id.'/'.$flyerLayoutFiles[0]->system_file_name }}" target="_blank">
+                        {{ $flyerLayoutFiles[0]->file_name_for_user }}
+                    </a>
                 @endif
             </div>
         @endif

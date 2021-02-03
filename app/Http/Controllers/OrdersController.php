@@ -8,7 +8,9 @@ use App\Models\Order;
 use App\Models\OrderAmount;
 use App\Models\PrintFormat;
 use App\Models\PrintType;
+use App\Models\Upload;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class OrdersController extends Controller
 {
@@ -73,18 +75,58 @@ class OrdersController extends Controller
 
         if ($request->get('design_needed', 0) == 1) {
             if ($request->hasFile('flyer_logo')) {
-                $order->addMediaFromRequest('flyer_logo')->toMediaCollection('flyer_logo');
+                $this->uploadFileFromRequest($request, 'flyer_logo', $order->id);
             }
             if ($request->has('additional_files')) {
-                $order->addMultipleMediaFromRequest(['additional_files'])->each(function ($fileAdder) {
-                    $fileAdder->toMediaCollection('additional_files');
-                });
+                foreach ($request->file('additional_files') as $file) {
+                    $this->uploadFileFromRequest($request, 'additional_files', $order->id, $file);
+                }
             }
         } elseif ($request->get('design_needed', 0) == 0 && $request->hasFile('flyer_layout_file')) {
-            $order->addMediaFromRequest('flyer_layout_file')->toMediaCollection('flyer_layout_file');
+            $this->uploadFileFromRequest($request, 'flyer_layout_file', $order->id);
         }
 
         return redirect()->route('orders.index')->with('message', 'Jūsų užsakymas sukurtas');
+    }
+
+    public function uploadFileFromRequest($request, $type, $orderId, $file = null)
+    {
+        if (!file_exists(storage_path('uploads'))) {
+            mkdir(storage_path('uploads'));
+        }
+        if (!file_exists(public_path('uploads'))) {
+            mkdir(public_path('uploads'));
+        }
+        if (!file_exists(public_path('uploads/'.$orderId))) {
+            mkdir(public_path('uploads/'.$orderId));
+        }
+
+        if (!isset($file)) {
+            $file = $request->file($type);
+        }
+
+        $fileNameForUser = $file->getClientOriginalName();
+        $fileNameForUserWithoutExtension = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+        $fileExtension = $file->getClientOriginalExtension();
+
+        if (mb_strlen($fileNameForUserWithoutExtension) > 254) {
+            $systemFileName = $fileNameForUser;
+        } else {
+            $lengthOfRandomString = 254 - 1 - mb_strlen($fileNameForUserWithoutExtension);
+            $lengthOfRandomString = $lengthOfRandomString > 16 ? 16 : $lengthOfRandomString;
+
+            $systemFileName = $fileNameForUserWithoutExtension.'_'.Str::random($lengthOfRandomString).'.'.$fileExtension;
+        }
+
+        $file->storeAs('uploads', $systemFileName);
+        rename(storage_path('app/uploads').'/'.$systemFileName, public_path('uploads/'.$orderId).'/'.$systemFileName);
+
+        $upload = Upload::create([
+            'file_name_for_user' => $fileNameForUser,
+            'system_file_name' => $systemFileName,
+            'type' => $type,
+            'order_id' => $orderId,
+        ]);
     }
 
     public function view($id)
@@ -93,9 +135,9 @@ class OrdersController extends Controller
 
         return view('orders.view', [
             'order' => $order,
-            'flyerLogos' => $order->getMedia('flyer_logo'),
-            'additionalFiles' => $order->getMedia('additional_files'),
-            'flyerLayoutFiles' => $order->getMedia('flyer_layout_file'),
+            'flyerLogos' => $order->getFlyerLogos(),
+            'additionalFiles' => $order->getAdditionalFiles(),
+            'flyerLayoutFiles' => $order->getFlyerLayoutFiles(),
         ]);
     }
 }
