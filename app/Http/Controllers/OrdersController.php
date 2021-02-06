@@ -33,22 +33,24 @@ class OrdersController extends Controller
 
     public function store(OrderRequest $request)
     {
-        if (isset($request->districts) && count($request->districts) > 0) {
-            $districts = District::whereIn('id', $request->districts)->get();
-            $districtCoefficient = max($districts->pluck('coefficient')->toArray());
+        $districtCoefficient = 1;
+
+        $districts = District::whereIn('id', $request->districts)->get();
+
+        if (is_numeric($request->amount)) {
+            $orderAmountObject = OrderAmount::where('amount', $request->amount)->first();
+            $amount = $request->amount;
         } else {
-            $districts = [];
-            $districtCoefficient = 1;
+            $orderAmountObject = OrderAmount::orderBy('coefficient', 'asc')->first();
+            $amount = array_sum($districts->pluck('population')->toArray());
         }
 
         $printFormat = PrintFormat::find($request->print_format);
         $printType = PrintType::find($request->print_type);
-        $orderAmount = OrderAmount::find($request->amount);
 
         $printFormatCoefficient = $printFormat->coefficient ?? 0;
         $printTypeCoefficient = $printType->coefficient ?? 0;
-        $amountCoefficient = $orderAmount->coefficient ?? 0;
-        $amount = $orderAmount->amount ?? 0;
+        $amountCoefficient = $orderAmountObject->coefficient ?? 0;
 
         $total = $amount * $amountCoefficient * $districtCoefficient * $printFormatCoefficient * $printTypeCoefficient;
 

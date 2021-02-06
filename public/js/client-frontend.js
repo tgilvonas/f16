@@ -30,18 +30,22 @@ $(document).ready(function(){
     let printTypeCoefficient = 1;
     let amountCoefficient = 1;
     let amount = 1;
+    let totalAuditorium = 0;
 
-    findLargestDistrictCoefficient();
+    //findLargestDistrictCoefficient();
+    calculateTotalAuditoriumInSelectedDistricts();
     findAmountAndItsCoefficient();
     findPrintFormatCoefficient();
     findPrintTypeCoefficient();
     calculateTotalSumAndOutputItToHtmlElement();
 
     $('.districts').change(function(){
-        findLargestDistrictCoefficient();
+        calculateTotalAuditoriumInSelectedDistricts();
+        findAmountAndItsCoefficient();
         calculateTotalSumAndOutputItToHtmlElement();
     });
     $('.amount').change(function(){
+        calculateTotalAuditoriumInSelectedDistricts();
         findAmountAndItsCoefficient();
         calculateTotalSumAndOutputItToHtmlElement();
     });
@@ -85,15 +89,39 @@ $(document).ready(function(){
             districtCoefficient = 1;
         }
     }
+    function calculateTotalAuditoriumInSelectedDistricts() {
+        totalAuditorium = 0;
+        let idsOfDistricts = $('.districts').val();
+        for (let i = 0; i < idsOfDistricts.length; i++) {
+            idsOfDistricts[i] = Number(idsOfDistricts[i]);
+        }
+        for (let i = 0; i < dataOfCoefficients['districts'].length; i++) {
+            if (idsOfDistricts.includes(dataOfCoefficients['districts'][i]['id'])) {
+                totalAuditorium += dataOfCoefficients['districts'][i]['population'];
+            }
+        }
+        $('.auditorium_and_amount').text(totalAuditorium);
+    }
     function findAmountAndItsCoefficient() {
         let coefficient = 1;
-        let id = $('.amount').val();
+        let selectedAmount = $('.amount:checked').val();
 
-        for (let i = 0; i < dataOfCoefficients['amounts'].length; i++) {
-            if (dataOfCoefficients['amounts'][i]['id'] == id) {
-                coefficient = dataOfCoefficients['amounts'][i]['coefficient'];
-                amount = dataOfCoefficients['amounts'][i]['amount'];
-                break;
+        if (isNaN(Number(selectedAmount))) {
+            amount = totalAuditorium;
+            let coefficients = new Array();
+            for (let i = 0; i < dataOfCoefficients['amounts'].length; i++) {
+                coefficients.push(dataOfCoefficients['amounts'][i]['coefficient']);
+            }
+            coefficient = coefficients.reduce(function(a, b) {
+                return Math.min(a, b);
+            });
+        } else {
+            for (let i = 0; i < dataOfCoefficients['amounts'].length; i++) {
+                if (dataOfCoefficients['amounts'][i]['amount'] == selectedAmount) {
+                    amount = Number(selectedAmount);
+                    coefficient = dataOfCoefficients['amounts'][i]['coefficient'];
+                    break;
+                }
             }
         }
         amountCoefficient = coefficient;
@@ -125,8 +153,8 @@ $(document).ready(function(){
         printTypeCoefficient = coefficient;
     }
     function calculateTotalSumAndOutputItToHtmlElement() {
-        let total = amount * amountCoefficient * districtCoefficient * printFormatCoefficient * printTypeCoefficient;
-        //console.log(amount, amountCoefficient, districtCoefficient, printFormatCoefficient, printTypeCoefficient)
+        let total = amount * amountCoefficient * printFormatCoefficient * printTypeCoefficient;
+        console.log(amount, amountCoefficient, printFormatCoefficient, printTypeCoefficient, totalAuditorium);
         $('.total_sum').text(total.toFixed(2));
     }
 

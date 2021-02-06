@@ -28,7 +28,7 @@
                         <td>{{ $order->print_type_title }}</td>
                         <td>{{ $order->print_format_title }} {{ $order->print_format_measurements }}</td>
                         <td>{{ $order->amount }}</td>
-                        <td>{{ number_format($order->total, 2) }}&euro;</td>
+                        <td>{{ number_format($order->total, 2, '.', '') }}&euro;</td>
                         <td>{{ $order->created_at }}</td>
                         <td>{{ $order->distribution_date->format('Y-m-d') }}</td>
                         <td>

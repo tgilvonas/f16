@@ -38,14 +38,21 @@
             </select>
         </div>
         <div class="form-group">
-            <label class="font-weight-bold">Kiekis</label>
-            <select name="amount" class="form-control select2 amount">
-                @foreach($amounts as $amount)
-                    <option value="{{ $amount->id }}" @if(old('amount')==$amount->id) selected @endif >
+            <div class="font-weight-bold">Kiekis</div>
+            @foreach($amounts as $amount)
+                <div class="form-check">
+                    <input class="form-check-input amount" type="radio" name="amount" value="{{ $amount->amount }}" @if(old('amount') == $amount->amount) checked @endif id="amount_{{ $amount->amount }}">
+                    <label class="form-check-label" for="amount_{{ $amount->amount }}">
                         {{ $amount->amount }}
-                    </option>
-                @endforeach
-            </select>
+                    </label>
+                </div>
+            @endforeach
+            <div class="form-check">
+                <input class="form-check-input amount" type="radio" name="amount" value="auditorium_of_districts" @if(old('amount') == 'auditorium_of_districts') checked @endif id="amount_auditorium_of_districts">
+                <label class="form-check-label" for="amount_auditorium_of_districts">
+                    Pasirinktų rajonų auditorijų suma: <span class="auditorium_and_amount">0</span>
+                </label>
+            </div>
         </div>
         <div class="form-group">
             <div class="font-weight-bold">Skrajutės formatas</div>
@@ -62,7 +69,7 @@
             <div class="font-weight-bold">Spaudos tipas</div>
             @foreach($printTypes as $printType)
                 <div class="form-check">
-                    <input class="form-check-input print_type" type="radio" name="print_type" value="{{ $printType->id }}" @if(old('print_type') == $printType->id) checked @endif id="print_type_{{ $printType->id }}">
+                    <input class="form-check-input print_type" type="radio" name="print_type" value="{{ $printType->id }}" {{-- @if(old('print_type') == $printType->id) checked @endif --}} checked id="print_type_{{ $printType->id }}">
                     <label class="form-check-label" for="print_type_{{ $printType->id }}">
                         {{ $printType->title }}
                     </label>
