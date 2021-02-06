@@ -16,6 +16,7 @@ class Order extends Model
 
     protected $casts = [
         'districts' => 'object',
+        'distribution_date' => 'date',
     ];
 
     public function uploads()

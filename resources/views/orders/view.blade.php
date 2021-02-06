@@ -17,6 +17,14 @@
     </div>
     <div class="row">
         <div class="col-xl-6 font-weight-bold">
+            Išplatinimo data
+        </div>
+        <div class="col-xl-6">
+            {{ $order->distribution_date->format('Y-m-d') }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-6 font-weight-bold">
             Kontaktinis el. paštas
         </div>
         <div class="col-xl-6">
@@ -92,7 +100,7 @@
             Užsakymo suma
         </div>
         <div class="col-xl-6 font-weight-bold">
-            {{ number_format($order->total) }} &euro;
+            {{ number_format($order->total, 2) }} &euro;
         </div>
     </div>
 

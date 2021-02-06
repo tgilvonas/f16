@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c096ef73-cff7-4ab2-b15c-fe1241bf0bc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/orders/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/orders/view.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +157,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lkl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -207,7 +208,8 @@
       <workItem from="1612167037115" duration="15000" />
       <workItem from="1612289476145" duration="645000" />
       <workItem from="1612298069226" duration="6000" />
-      <workItem from="1612377813460" duration="8590000" />
+      <workItem from="1612377813460" duration="9097000" />
+      <workItem from="1612622744240" duration="294000" />
     </task>
     <servers />
   </component>
@@ -215,10 +217,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1612382990422">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1612388357355">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1612382990422" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1612388357355" />
     <state x="974" y="475" key="NewPhpFileDialog" timestamp="1612038176555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
