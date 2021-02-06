@@ -30,7 +30,7 @@
                         <td>{{ $order->amount }}</td>
                         <td>{{ number_format($order->total, 2) }}&euro;</td>
                         <td>{{ $order->created_at }}</td>
-                        <td>{{ $order->distribution_date }}</td>
+                        <td>{{ $order->distribution_date->format('Y-m-d') }}</td>
                         <td>
                             <span class="badge badge-primary">
                                 {{ $order->order_status }}

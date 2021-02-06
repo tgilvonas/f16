@@ -99,7 +99,7 @@
         </div>
         <div class="form-group">
             <label class="font-weight-bold">Išplatinimo data</label>
-            <input type="date" name="distribution_date" value="{{ old('distribution_date') }}" class="form-control" />
+            <input type="text" name="distribution_date" value="{{ old('distribution_date') }}" class="form-control distribution_date" readonly style="background-color: white !important;" />
         </div>
         <div class="form-group">
             <div class="form-check">

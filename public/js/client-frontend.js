@@ -1,3 +1,27 @@
+const monthNames = [
+    'Sausis',
+    'Vasaris',
+    'Kovas',
+    'Balandis',
+    'Gegužė',
+    'Birželis',
+    'Liepa',
+    'Rugpjūts',
+    'Rugsėjis',
+    'Spalis',
+    'Lapkritis',
+    'Gruodis'
+];
+const dayNamesShort = [
+    'Sk',
+    'Pr',
+    'An',
+    'Tr',
+    'Kt',
+    'Pn',
+    'Št',
+];
+
 $(document).ready(function(){
     $('.select2').select2();
 
@@ -32,6 +56,14 @@ $(document).ready(function(){
 
     $('.design_needed').change(function(){
         toggleInputsIfDesignNeeded();
+    });
+
+    $('.distribution_date').datepicker({
+        dateFormat: "yy-mm-dd",
+        firstDay: 1,
+        monthNames: monthNames,
+        dayNamesMin: dayNamesShort,
+        minDate: 1
     });
 
     function findLargestDistrictCoefficient() {

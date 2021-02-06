@@ -70,7 +70,7 @@ class OrdersController extends Controller
             'design_needed' => $request->get('design_needed', 0),
             'invoice_needed' => $request->get('invoice_needed', 0),
             'flyer_text' => $request->get('flyer_text', ''),
-            'distribution_date' => date('Y-m-d'), // TO BE CHANGED AND CONCLUDED!!!
+            'distribution_date' => $request->get('distribution_date', null),
         ]);
 
         if ($request->get('design_needed', 0) == 1) {

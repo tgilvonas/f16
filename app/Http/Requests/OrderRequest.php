@@ -27,7 +27,8 @@ class OrderRequest extends FormRequest
             'print_format' => 'required|numeric',
             'print_type' => 'required|numeric',
             'flyer_logo' => 'required_if:design_needed,1',
-            'flyer_layout_file' => 'required_unless:design_needed,1'
+            'flyer_layout_file' => 'required_unless:design_needed,1',
+            'distribution_date' => 'required',
         ];
     }
 }

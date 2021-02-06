@@ -9,6 +9,9 @@
 
     <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
 
+    <link rel="stylesheet" href="/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script type="text/javascript" src="/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
     <link rel="stylesheet" href="/select2/css/select2.min.css">
     <script type="text/javascript" src="/select2/js/select2.full.min.js"></script>
 
